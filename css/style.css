@@ -1,15 +1,142 @@
 /* CSS for CROWD Int Coding demo */
 
 /*- simple reset from nettuts+ not a full project so this is all it needs :) -*/
-html,body,ul,ol,li,form,fieldset,legend{margin:0;padding:0;}h1,h2,h3,h4,h5,h6,p{margin-top:0;}fieldset,img{border:0;}legend{color:#000;}li{list-style:none;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}table{border-collapse:collapse;border-spacing:0;}caption,th,td{text-align:left;vertical-align:top;font-weight:normal;}input,textarea,select{font-size:110%;line-height:1.1;}
+html,body,ul,ol,li,form,fieldset,legend{margin:0;padding:0;}h1,h2,h3,h4,h5,h6,p{margin-top:0;}fieldset,img{border:0;}legend{color:#000;}ul,li{list-style:none;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}table{border-collapse:collapse;border-spacing:0;}caption,th,td{text-align:left;vertical-align:top;font-weight:normal;}input,textarea,select{font-size:110%;line-height:1.1;}
 /*----------------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------ELEMENT SPECIFIC */
+body{
+	font-family: arial,helvetica,clean,sans-serif;
+	font-size: 13px;
+	color:#6C6D6E;
+}
 
 #wrapper{
 	width:950px;
 }
 
+/*-------------------------------------- #header */
+#header{
+	height:100px;
+}
+
+	/*-------------------------------------- #social */
+	#social{
+		margin-top:30px;
+		font-size:12px;
+		color:#333;
+	}
+
+		#social ul, #social p, #social li{
+			float:left;
+		}
+
+			#social li{
+				margin-left:2px;
+				margin-top:-2px;
+			}
+
+	/*-------------------------------------- #login */
+	#login{
+		margin-top:10px;
+		color:#333;
+	}
+
+		#login a{
+			color: #004960;
+			text-decoration:none;
+		}
+
+			#login a:hover{
+				text-decoration:underline;
+			}
+
+	/*-------------------------------------- #nav */
+	#nav{
+		font-size:17px;
+	}
+		#nav a{
+			color:#333;
+			text-decoration:none;
+			padding:8px;
+		}
+			#nav a:hover{
+				border:1px solid #959595;
+				padding:8px 7px;
+				background: #e7e5cd; /* Old browsers */
+				background: -moz-linear-gradient(top, #e7e5cd 0%, #d4d0a6 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e7e5cd), color-stop(100%,#d4d0a6)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, #e7e5cd 0%,#d4d0a6 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top, #e7e5cd 0%,#d4d0a6 100%); /* Opera11.10+ */
+				background: -ms-linear-gradient(top, #e7e5cd 0%,#d4d0a6 100%); /* IE10+ */
+			}
+
+/*--------------------------------------- #home-columns */
+#home-columns{
+	margin:10px 0;
+}
+	#home-columns h2{
+		border-bottom:1px solid #c3c3c3;
+		width:100%;
+		text-transform:uppercase;
+		font-weight:normal;
+	}
+/*-------------------------------------- .nav */
+.nav li{
+	float:left;
+}
+
+	.nav li:after{
+		content:"|";
+	}
+
+	.nav li.last:after{
+		content:"";
+	}
 
 /*-----Utlis-----*/
 .auto-center{
 	margin:auto;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+.clear{
+	clear:both;
+}
+/*----- columns*/
+
+.colzi-1of3{
+	width:30%;
+	float:left;
+	padding:20px;
+	border-left:1px solid #eee;
+	border-right:1px solid #eee;
+}
+
+.lastcol,.firstcol{
+	border:none;
+}
+
+.firstcol{
+	padding-left:0;
+}
+
+.lastcol{
+	padding-right:0;
+}
+
+/* ie specifics */
+/* nav rigt border */
+.ie6 #nav li{
+	height:29px;
+	padding-top:9px;
+}
+
+.ie6 .nav li,.ie7 .nav li{
+	border-right:1px solid #999;
 }
