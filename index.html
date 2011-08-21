@@ -50,11 +50,11 @@
 
 		<div id="content">
 			<div id="slideshow" class="rel">
-				<img id="slide-1" class="slide abs" src="img/slideshow/step1n.jpg" alt="" />
-				<img id="slide-2" class="slide abs" src="img/slideshow/step2n.jpg" alt="" />
-				<img id="slide-3" class="slide abs" src="img/slideshow/step3n.jpg" alt="" />
-				<img id="slide-4" class="slide abs" src="img/slideshow/step4n.jpg" alt="" />
-				<img id="slide-5" class="slide abs" src="img/slideshow/step5n.jpg" alt="" />
+				<img id="slide-0" class="slide abs track-as-link" src="img/slideshow/slide-0.jpg" alt="" />
+				<img id="slide-1" class="slide abs track-as-link" src="img/slideshow/slide-1.jpg" alt="" />
+				<img id="slide-2" class="slide abs track-as-link" src="img/slideshow/slide-2.jpg" alt="" />
+				<img id="slide-3" class="slide abs track-as-link" src="img/slideshow/slide-3.jpg" alt="" />
+				<img id="slide-4" class="slide abs track-as-link" src="img/slideshow/slide-4.jpg" alt="" />
 				<img id="book_over" class="abs" src="img/slideshow/book_over.png" alt="" />
 			</div>
 
@@ -118,9 +118,17 @@
 	
 	<script type="text/javascript">
 		yepnope({
-			//			jQuery					,	HTML5 BP log func ,	my script
-			load : ['js/libs/jquery-1.6.2.min.js','js/libs/plugins.js','js/script.js']
+			//			jQuery					,	HTML5 BP log func ,	my script,		slideshow
+			load : ['js/libs/jquery-1.6.2.min.js','js/libs/plugins.js','js/script.js','js/crowd_slideshow.js'],
+			complete : function(url, result, key){
+					$(document).ready(function(){
+						$('#slideshow').crowd_slideshow();
+					});
+			}
 		});
+
+
+
 	</script>
 
 </body>

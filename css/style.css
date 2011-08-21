@@ -123,6 +123,10 @@ body{
 .abs{
 	position:absolute;
 }
+.track-as-link{
+	cursor:pointer;
+	cursor:hand; /*ie6*/	
+}
 /*----- columns*/
 
 .colzi-1of3{
@@ -174,10 +178,18 @@ body{
 
 /*------------------------------------------------------------------ SLIDESHOW*/
 #slideshow{
+	width:950px;
 	height:463px;
+	border:1px solid #ddd;
+	overflow:hidden;
+	background:#FFF url(../img/slideshow/loading.gif) 50% 50% no-repeat;
 }
 
 #book_over{
 	top:0;
 	right:20px;
+}
+
+.slide{
+	display:none;
 }
