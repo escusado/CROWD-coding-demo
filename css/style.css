@@ -117,6 +117,12 @@ body{
 .clear{
 	clear:both;
 }
+.rel{
+	position:relative;
+}
+.abs{
+	position:absolute;
+}
 /*----- columns*/
 
 .colzi-1of3{
@@ -163,4 +169,15 @@ body{
 
 .ie6 .nav li,.ie7 .nav li{
 	border-right:1px solid #999;
+}
+
+
+/*------------------------------------------------------------------ SLIDESHOW*/
+#slideshow{
+	height:463px;
+}
+
+#book_over{
+	top:0;
+	right:20px;
 }
