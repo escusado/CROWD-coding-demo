@@ -72,28 +72,37 @@ body{
 				background: -ms-linear-gradient(top, #e7e5cd 0%,#d4d0a6 100%); /* IE10+ */
 			}
 
-/*--------------------------------------- #home-columns */
-#home-columns{
-	margin:10px 0;
-}
-	#home-columns h2{
-		border-bottom:1px solid #c3c3c3;
-		width:100%;
-		text-transform:uppercase;
-		font-weight:normal;
+	/*--------------------------------------- #home-columns */
+	#home-columns{
+		margin-top:10px;
+		
 	}
-/*-------------------------------------- .nav */
-.nav li{
-	float:left;
-}
+		#home-columns h2{
+			border-bottom:1px solid #c3c3c3;
+			width:100%;
+			text-transform:uppercase;
+			font-weight:normal;
+		}
 
-	.nav li:after{
-		content:"|";
+	/*--------------------------------------- #footer */
+	#footer{
+		border-top:1px solid #c3c3c3;
+		margin-top:15px;
+		padding-top:10px;
+		
 	}
+		#footer a{
+			color: #6C6D6E;
+			text-decoration:none;
+			padding:5px;
+			
+		}
 
-	.nav li.last:after{
-		content:"";
-	}
+			#footer a:hover{
+				color: #004960;
+				text-decoration:underline;
+			}
+
 
 /*-----Utlis-----*/
 .auto-center{
@@ -130,7 +139,22 @@ body{
 	padding-right:0;
 }
 
-/* ie specifics */
+/*-------- .nav */
+.nav li{
+	float:left;
+}
+
+	.nav li:after{
+		content:"|";
+	}
+
+	.nav li.last:after{
+		content:"";
+	}
+
+
+
+/*-------BROWSER SPECIFICS----------*/
 /* nav rigt border */
 .ie6 #nav li{
 	height:29px;
