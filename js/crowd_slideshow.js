@@ -1,5 +1,5 @@
 /*CONFIG*/
-var hotspot = 68; //more slides less hotspot width
+var hotspot = 53; //more slides less hotspot width
 
 (function( $ ){
 
@@ -7,7 +7,7 @@ var hotspot = 68; //more slides less hotspot width
 		init : function() {
 			var slideshow_obj = $(this);
 
-			//set slides into correct position
+			//set slides into left position
 			slideshow_obj.find('.slide').each(function(){
 				$(this).css('left',$(this).crowd_slide('left_pos'));
 			});
@@ -22,7 +22,30 @@ var hotspot = 68; //more slides less hotspot width
 			});
 		},
 		switch_to_slide : function ( options ){
-			log(options.slide);
+			//set animation args
+			var animation_args = {queue:false,duration:500};
+
+			//log(options.slide);
+			var slideshow_obj = $(this);
+
+			//get slide
+			var selected_slide = slideshow_obj.find('#slide-'+options.slide);
+
+			//move all next slides to right position
+			selected_slide.find('~ .slide').each(function(){
+				//$(this).css('left',$(this).crowd_slide('right_pos'));
+				$(this).animate({left:$(this).crowd_slide('right_pos')},animation_args);
+			});
+
+			//move all previous slides to left position
+			selected_slide.prevAll('.slide').each(function(){
+				//$(this).css('left',$(this).crowd_slide('left_pos'));
+				$(this).animate({left:$(this).crowd_slide('left_pos')},animation_args);
+			});
+
+			//activate slide
+			//selected_slide.css('left',selected_slide.crowd_slide('left_pos'));
+			selected_slide.animate({left:selected_slide.crowd_slide('left_pos')},animation_args);
 		}
 	};
 
