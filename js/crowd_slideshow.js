@@ -5,12 +5,24 @@ var hotspot = 68; //more slides less hotspot width
 
 	var methods = {
 		init : function() {
+			var slideshow_obj = $(this);
 
-			$(this).find('.slide').each(function(){
+			//set slides into correct position
+			slideshow_obj.find('.slide').each(function(){
 				$(this).css('left',$(this).crowd_slide('left_pos'));
 			});
 
-			$(this).find('.slide').delay(500).fadeIn('slow');
+			//show slides
+			slideshow_obj.find('.slide').delay(500).fadeIn('slow');
+
+			//set click action to slides
+			slideshow_obj.find('.slide').click(function(){
+				var slide_index = $(this).attr('id').replace('slide-','');
+				slideshow_obj.crowd_slideshow('switch_to_slide',{slide:slide_index});
+			});
+		},
+		switch_to_slide : function ( options ){
+			log(options.slide);
 		}
 	};
 
