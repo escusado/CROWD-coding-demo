@@ -119,8 +119,30 @@
 	<div id="lightbox" class="abs"></div>
 
 	<div id="crowd-feedback-container" class="abs">
-		<div id="crowd-feedback-form">
-			lorem-lorem
+		<div id="crowd-feedback-form-container">
+			<img id="crowd-feedback-cancel" class="abs track-as-link" src="img/feedback/cancel.gif" alt="Cancel" />
+			<strong>Please send us your thoughts:</strong>
+
+			<form id="crowd-feedback-form" class="form">
+
+				<p class="name">
+					<input type="text" name="name" id="name" />
+					<label for="name">Name</label>
+				</p>
+
+				<p class="email">
+					<input type="text" name="email" id="email" />
+					<label for="email">E-mail</label>
+				</p>
+
+				<p class="text">
+					<textarea name="text"></textarea>
+				</p>
+
+				<div id="submit"><p>Submit</p></div>
+
+			</form>
+
 		</div>
 		<!-- <img src="img/feedback/envelope" alt="" /> -->
 	</div>

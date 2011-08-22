@@ -43,7 +43,7 @@ var slideshow_timer = 2000;
 		},
 		switch_to_slide : function ( options ){
 			//set animation args
-			var animation_args = {queue:false,duration:500};
+			var animation_args = {duration:500};
 
 			//log(options.slide);
 			var slideshow_obj = $(this);
