@@ -99,6 +99,7 @@ var slideshow_timer = 2000;
 (function( $ ){
 
 	var methods = {
+		
 		//assign each slide its left and right position based on the hotspot area and the width of the slideshow container
 
 		left_pos : function() {
@@ -106,7 +107,7 @@ var slideshow_timer = 2000;
 			return (hotspot * slide_index)+'px';
 		},
 		right_pos : function() {
-			//refactor into less operations
+			//todo: refactor into less operations
 			var slideshow_width = $(this).parent().width();
 			var number_of_slides = $(this).parent().find('.slide').length;		
 			var right_margin = slideshow_width - (number_of_slides * hotspot);

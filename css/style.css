@@ -162,20 +162,6 @@ body{
 		content:"";
 	}
 
-
-
-/*-------BROWSER SPECIFICS----------*/
-/* nav rigt border */
-.ie6 #nav li{
-	height:29px;
-	padding-top:9px;
-}
-
-.ie6 .nav li,.ie7 .nav li{
-	border-right:1px solid #999;
-}
-
-
 /*------------------------------------------------------------------ SLIDESHOW*/
 #slideshow{
 	width:950px;
@@ -192,4 +178,45 @@ body{
 
 .slide{
 	display:none;
+	border-left:1px solid #fff;
 }
+.slide:first-child{
+	display:none;
+	border:none;
+}
+
+/*--------------------------------------------------------------- FEEDBACK */
+#crowd-feedback-container{
+	display:none;
+}
+
+#crowd-feedback-trigger{
+	top:50%;
+	left:-20px;
+}
+
+#lightbox{
+	left:0;
+	top:0;
+	width:100%;
+	height:9999px; /*fuck ie6, should be 100%*/
+	background-color:#000;
+	zoom: 1;
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+	display:none;
+}
+
+
+
+/*-------BROWSER SPECIFICS----------*/
+/* nav rigt border */
+.ie6 #nav li{
+	height:29px;
+	padding-top:9px;
+}
+
+.ie6 .nav li,.ie7 .nav li{
+	border-right:1px solid #999;
+}
+

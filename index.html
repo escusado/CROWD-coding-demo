@@ -50,12 +50,12 @@
 
 		<div id="content">
 			<div id="slideshow" class="rel">
-				<img id="slide-0" class="slide abs track-as-link" src="img/slideshow/slide-0.jpg" alt="" />
-				<img id="slide-1" class="slide abs track-as-link" src="img/slideshow/slide-1.jpg" alt="" />
-				<img id="slide-2" class="slide abs track-as-link" src="img/slideshow/slide-2.jpg" alt="" />
-				<img id="slide-3" class="slide abs track-as-link" src="img/slideshow/slide-3.jpg" alt="" />
-				<img id="slide-4" class="slide abs track-as-link" src="img/slideshow/slide-4.jpg" alt="" />
-				<a href="#"><img id="book_over" class="abs" src="img/slideshow/book_over.png" alt="" /></a>
+				<img id="slide-0" class="slide abs track-as-link" src="img/slideshow/slide-0.jpg" alt="Welcome" title="Welcome" />
+				<img id="slide-1" class="slide abs track-as-link" src="img/slideshow/slide-1.jpg" alt="How to get started" title="How to get started"/>
+				<img id="slide-2" class="slide abs track-as-link" src="img/slideshow/slide-2.jpg" alt="Build your design book" title="Build your design book"/>
+				<img id="slide-3" class="slide abs track-as-link" src="img/slideshow/slide-3.jpg" alt="Consult aprofessional" title="Consult aprofessional"/>
+				<img id="slide-4" class="slide abs track-as-link" src="img/slideshow/slide-4.jpg" alt="Decorate with confidence" title="Decorate with confidence"/>
+				<a href="#" title="Create New Notebook"><img id="book_over" class="abs" src="img/slideshow/book_over.png" alt="Create New Notebook" /></a>
 			</div>
 
 			<div id="home-columns" class="adjust-height">
@@ -114,13 +114,27 @@
 
 	</div>
 
+	<!-- Feedback section -->
+	<img id="crowd-feedback-trigger" class="abs track-as-link" src="img/feedback/feedback.png" alt="Feedback" />
+	<div id="lightbox" class="abs"></div>
+
+	<div id="crowd-feedback-container" class="abs">
+		<div id="crowd-feedback-form">
+			lorem-lorem
+		</div>
+		<!-- <img src="img/feedback/envelope" alt="" /> -->
+	</div>
+
 	<script type="text/javascript">
 		yepnope({
 			//			jQuery					,	HTML5BP log func ,	util scripts	,	slideshow
-			load : ['js/libs/jquery-1.6.2.min.js','js/libs/plugins.js','js/script.js','js/crowd_slideshow.js'],
+			load : ['js/libs/jquery-1.6.2.min.js','js/libs/plugins.js','js/script.js','js/crowd_slideshow.js','js/crowd_feedback.js' ],
 			complete : function(url, result, key){
 					$(document).ready(function(){
 						$('#slideshow').crowd_slideshow();
+
+						//add feedback button to page
+						$('body').crowd_feedback('init',{post_data:'send.php'});
 					});
 			}
 		});
