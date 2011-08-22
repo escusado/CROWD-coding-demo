@@ -148,7 +148,9 @@ body{
 .lastcol{
 	padding-right:0;
 }
-
+.hide{
+	display:none;
+}
 /*-------- .nav */
 .nav li{
 	float:left;
@@ -206,6 +208,7 @@ body{
 	top:5px;
 }
 
+/* Shamelessly stolen from nettuts tutorial ha! just making my life easier :) {*/
 input, textarea {
 	padding: 9px;
 	border: solid 1px #E5E5E5;
@@ -214,23 +217,21 @@ input, textarea {
 	width: 200px;
 	background: #FFFFFF;
 	}
-
 textarea {
 	width: 280px;
 	max-width: 280px;
 	height: 109px;
 	line-height: 150%;
 	}
-
 input:hover, textarea:hover,
 input:focus, textarea:focus {
 	border-color: #C9C9C9;
 	}
-
 .form label {
 	margin-left: 10px;
 	color: #333;
 	}
+/* } */
 
 #submit{
 	height:40px;
