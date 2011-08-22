@@ -1,7 +1,10 @@
 /*CONFIG*/
 var hotspot = 53; //more slides less hotspot width
+var slideshow_timer = 2000;
 
 (function( $ ){
+
+	var auto_slide_timer = 0;
 
 	var methods = {
 		init : function() {
@@ -12,6 +15,9 @@ var hotspot = 53; //more slides less hotspot width
 				$(this).css('left',$(this).crowd_slide('left_pos'));
 			});
 
+			//set welcome page first
+			slideshow_obj.crowd_slideshow('switch_to_slide',{slide:0});
+
 			//show slides
 			slideshow_obj.find('.slide').delay(500).fadeIn('slow');
 
@@ -20,6 +26,20 @@ var hotspot = 53; //more slides less hotspot width
 				var slide_index = $(this).attr('id').replace('slide-','');
 				slideshow_obj.crowd_slideshow('switch_to_slide',{slide:slide_index});
 			});
+
+			//set auto slideshow
+			auto_slide_timer = setInterval(function(){ slideshow_obj.crowd_slideshow('auto_switch_slides'); },slideshow_timer);
+
+			//stop slideshow if mouse over slides, continue when mouse leave
+			slideshow_obj.hover(
+				function(){
+					clearInterval(auto_slide_timer);
+				},
+				function(){
+					auto_slide_timer = setInterval(function(){ slideshow_obj.crowd_slideshow('auto_switch_slides'); },slideshow_timer);
+				}
+			);
+
 		},
 		switch_to_slide : function ( options ){
 			//set animation args
@@ -32,20 +52,32 @@ var hotspot = 53; //more slides less hotspot width
 			var selected_slide = slideshow_obj.find('#slide-'+options.slide);
 
 			//move all next slides to right position
-			selected_slide.find('~ .slide').each(function(){
-				//$(this).css('left',$(this).crowd_slide('right_pos'));
+			selected_slide.nextAll('.slide').each(function(){
 				$(this).animate({left:$(this).crowd_slide('right_pos')},animation_args);
 			});
 
 			//move all previous slides to left position
 			selected_slide.prevAll('.slide').each(function(){
-				//$(this).css('left',$(this).crowd_slide('left_pos'));
 				$(this).animate({left:$(this).crowd_slide('left_pos')},animation_args);
 			});
 
 			//activate slide
-			//selected_slide.css('left',selected_slide.crowd_slide('left_pos'));
+			$(this).find('.slide').removeClass('active');
+			selected_slide.addClass('active');
 			selected_slide.animate({left:selected_slide.crowd_slide('left_pos')},animation_args);
+		},
+		auto_switch_slides : function(){
+			var slideshow_obj = $(this);
+
+			//check which slide is active
+			var active_slide_index = slideshow_obj.find('.active').attr('id').replace('slide-','');
+			var number_of_slides = slideshow_obj.find('.slide').length - 1;
+
+			//check if last
+			var next_slide = ( active_slide_index == number_of_slides) ? 0 : parseInt(active_slide_index) + 1;
+
+			//make the switch
+			slideshow_obj.crowd_slideshow('switch_to_slide',{slide:next_slide});
 		}
 	};
 

@@ -55,7 +55,7 @@
 				<img id="slide-2" class="slide abs track-as-link" src="img/slideshow/slide-2.jpg" alt="" />
 				<img id="slide-3" class="slide abs track-as-link" src="img/slideshow/slide-3.jpg" alt="" />
 				<img id="slide-4" class="slide abs track-as-link" src="img/slideshow/slide-4.jpg" alt="" />
-				<img id="book_over" class="abs" src="img/slideshow/book_over.png" alt="" />
+				<a href="#"><img id="book_over" class="abs" src="img/slideshow/book_over.png" alt="" /></a>
 			</div>
 
 			<div id="home-columns" class="adjust-height">
@@ -114,11 +114,9 @@
 
 	</div>
 
-	<!-- jQuery and my script file only so no need for yep nope-->
-	
 	<script type="text/javascript">
 		yepnope({
-			//			jQuery					,	HTML5 BP log func ,	my script,		slideshow
+			//			jQuery					,	HTML5BP log func ,	util scripts	,	slideshow
 			load : ['js/libs/jquery-1.6.2.min.js','js/libs/plugins.js','js/script.js','js/crowd_slideshow.js'],
 			complete : function(url, result, key){
 					$(document).ready(function(){
@@ -126,9 +124,6 @@
 					});
 			}
 		});
-
-
-
 	</script>
 
 </body>
